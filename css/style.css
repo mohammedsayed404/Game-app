@@ -1,0 +1,136 @@
+/* beging of general styling */
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+--bg-color:#272b30;
+--nav-bg-color:#3A497B;
+--nav-active: #09c;
+--defaults-color:#fff;
+}
+a {
+    color:inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    background-color:var(--bg-color);
+}
+.loading{
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background-color: #272b30e3;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    transition: opacity 1s , visibility 1s ;
+}
+
+.loading::after {
+    content: '';
+    width:100px;
+    height: 100px;
+    background-color: transparent; 
+    border-radius: 50%;
+    border : 5px solid;
+    border-color: transparent #e91e63 transparent transparent ;
+    transform:rotate(0deg);
+    animation: load 1s ease infinite;
+    
+}
+.loading-hidden{
+    opacity: 0;
+    visibility: hidden;
+    
+}
+
+@keyframes load {
+    from {
+            
+        transform:rotate(0deg);
+    }
+    to {
+        
+        transform:rotate(360deg);
+    }
+  }
+/* Ending of general styling */
+
+/* beging of heder  */
+
+header img{
+    max-height: 30vh;
+}
+
+/* ending of heder  */
+
+/* beging of nav-bar */
+#Home-Games nav {
+    background-color: var(--nav-bg-color);
+    color:var(--defaults-color);
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px  rgba(0,0,0,0.8);
+}
+#Home-Games nav  a  {
+    color:var(--defaults-color);
+    font-size: 12.25px;
+}
+#Home-Games nav  img {
+    max-width: 40px;
+}
+#Home-Games .navbar-nav .nav-link.active{
+    color: var(--nav-active);
+}
+#Home-Games .navbar-nav .nav-link{
+    transition: 0.5s;
+}
+#Home-Games .navbar-nav .nav-link:hover{
+    color: var(--nav-active);
+}
+/* end of nav-bar  */
+
+/* begign of Game-section */
+#Games .badge{
+    color:var(--defaults-color);
+    background-color: #32383e;
+}
+#Games .card{
+    color:var(--defaults-color);
+    background-color: var(--bg-color);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+#Games .card img{
+    filter: grayscale(0.7);
+    transition: filter 0.5s 0.1s ;
+    
+}
+#Games .card .badge-free {
+    background-color:rgba(77, 132, 214, 0.479);
+}
+#Games .card:hover .badge-free {
+    background-color:rgb(13, 110, 253);
+    transition: background-color 0.5s 0.1s;
+}
+#Games .card:hover{
+    transform:scale(1.05); 
+    
+}
+#Games .card:hover img{
+    filter: none;
+}
+/* end of game section */
+
+/* beging of details section */
+#game-details .title-details .close-details{
+    cursor: pointer;
+}
+#game-details{
+    background-color:#27282B;
+    height: 100vh;
+}
